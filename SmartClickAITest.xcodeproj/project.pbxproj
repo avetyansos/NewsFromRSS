@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		672D05BC2476866B00D90021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05BB2476866B00D90021 /* AppDelegate.swift */; };
 		672D05BE2476866B00D90021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05BD2476866B00D90021 /* SceneDelegate.swift */; };
-		672D05C02476866B00D90021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05BF2476866B00D90021 /* ViewController.swift */; };
 		672D05C32476866B00D90021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C12476866B00D90021 /* Main.storyboard */; };
 		672D05C62476866B00D90021 /* SmartClickAITest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 672D05C42476866B00D90021 /* SmartClickAITest.xcdatamodeld */; };
 		672D05C82476866C00D90021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C72476866C00D90021 /* Assets.xcassets */; };
 		672D05CB2476866C00D90021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C92476866C00D90021 /* LaunchScreen.storyboard */; };
+		672D05D4247686D700D90021 /* NetworkRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05D3247686D700D90021 /* NetworkRequestWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		672D05B82476866B00D90021 /* SmartClickAITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartClickAITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		672D05BB2476866B00D90021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		672D05BD2476866B00D90021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		672D05BF2476866B00D90021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		672D05C22476866B00D90021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		672D05C52476866B00D90021 /* SmartClickAITest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartClickAITest.xcdatamodel; sourceTree = "<group>"; };
 		672D05C72476866C00D90021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		672D05CA2476866C00D90021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		672D05CC2476866C00D90021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		672D05D3247686D700D90021 /* NetworkRequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +58,9 @@
 		672D05BA2476866B00D90021 /* SmartClickAITest */ = {
 			isa = PBXGroup;
 			children = (
+				672D05D2247686B900D90021 /* Network Request Worker */,
 				672D05BB2476866B00D90021 /* AppDelegate.swift */,
 				672D05BD2476866B00D90021 /* SceneDelegate.swift */,
-				672D05BF2476866B00D90021 /* ViewController.swift */,
 				672D05C12476866B00D90021 /* Main.storyboard */,
 				672D05C72476866C00D90021 /* Assets.xcassets */,
 				672D05C92476866C00D90021 /* LaunchScreen.storyboard */,
@@ -68,6 +68,14 @@
 				672D05C42476866B00D90021 /* SmartClickAITest.xcdatamodeld */,
 			);
 			path = SmartClickAITest;
+			sourceTree = "<group>";
+		};
+		672D05D2247686B900D90021 /* Network Request Worker */ = {
+			isa = PBXGroup;
+			children = (
+				672D05D3247686D700D90021 /* NetworkRequestWorker.swift */,
+			);
+			path = "Network Request Worker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				672D05C62476866B00D90021 /* SmartClickAITest.xcdatamodeld in Sources */,
-				672D05C02476866B00D90021 /* ViewController.swift in Sources */,
 				672D05BC2476866B00D90021 /* AppDelegate.swift in Sources */,
+				672D05D4247686D700D90021 /* NetworkRequestWorker.swift in Sources */,
 				672D05BE2476866B00D90021 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
