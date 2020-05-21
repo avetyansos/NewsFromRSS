@@ -5,7 +5,7 @@
 
 import UIKit
 
-@objc protocol ArchivedNewsRoutingLogic {
+protocol ArchivedNewsRoutingLogic {
     
 }
 

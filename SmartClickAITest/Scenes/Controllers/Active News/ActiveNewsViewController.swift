@@ -9,8 +9,13 @@ protocol ActiveNewsDisplayLogic: class {
     func displayNews(viewModel: ActiveNews.UseCase.ViewModel)
 }
 
-class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic
+class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic, Storyboardable
 {
+    
+    static var storyboardName: StringConvertible {
+        return StoryboardType.activeNews
+    }
+    
     var interactor: ActiveNewsBusinessLogic?
     var router: (NSObjectProtocol & ActiveNewsRoutingLogic & ActiveNewsDataPassing)?
     @IBOutlet weak var newTableView: UITableView!
@@ -86,6 +91,10 @@ extension ActiveNewsViewController : UITableViewDataSource {
         cell.news = news[indexPath.row]
         return cell
     }
-    
-    
+}
+
+extension ActiveNewsViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routToNewsDetails(news: news[indexPath.row])
+    }
 }

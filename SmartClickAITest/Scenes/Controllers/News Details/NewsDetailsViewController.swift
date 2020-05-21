@@ -1,23 +1,28 @@
 //
-//  ArchivedNewsViewController.swift
+//  NewsDetailsViewController.swift
 //  SmartClickAITest
 //
 
 import UIKit
 
-protocol ArchivedNewsDisplayLogic: class {
+protocol NewsDetailsDisplayLogic: class {
 
 }
 
-class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, Storyboardable
+class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Storyboardable
 {
     
     static var storyboardName: StringConvertible {
-        return StoryboardType.archivedNews
+        return StoryboardType.newsDetails
     }
     
-    var interactor: ArchivedNewsBusinessLogic?
-    var router: (NSObjectProtocol & ArchivedNewsRoutingLogic & ArchivedNewsDataPassing)?
+    var interactor: NewsDetailsBusinessLogic?
+    var router: (NSObjectProtocol & NewsDetailsRoutingLogic & NewsDetailsDataPassing)?
+    @IBOutlet weak var newsDetailsTextView: UITextView!
+    @IBOutlet weak var newsTitleLabel: UILabel!
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var detailsTextViewHeight: NSLayoutConstraint!
+    var news:News?
     
     // MARK: Object lifecycle
     
@@ -38,9 +43,9 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     private func setup()
     {
         let viewController = self
-        let interactor = ArchivedNewsInteractor()
-        let presenter = ArchivedNewsPresenter()
-        let router = ArchivedNewsRouter()
+        let interactor = NewsDetailsInteractor()
+        let presenter = NewsDetailsPresenter()
+        let router = NewsDetailsRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -66,7 +71,18 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setupView()
         
+    }
+    
+    private func setupView() {
+        guard let viewDetails = news else {return}
+        self.newsImageView.downloaded(from: viewDetails.fullimage)
+        self.newsTitleLabel.text = viewDetails.title
+        self.newsDetailsTextView.text = viewDetails.description
+        let sizeThatFitsTextView = newsDetailsTextView.sizeThatFits(CGSize(width: CGFloat(217), height: CGFloat(MAXFLOAT)))
+        let heightOfTextFirstText = sizeThatFitsTextView.height
+        self.detailsTextViewHeight.constant = heightOfTextFirstText
     }
     
 }
