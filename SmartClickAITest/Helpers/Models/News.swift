@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Item: Decodable {
+struct Item: Codable {
     var item : News
 }
 
 
-struct News: Decodable {
+struct News: Codable {
     var title: String
     var link: String
     var updatedAt: String
@@ -23,4 +23,5 @@ struct News: Decodable {
     var description: String
     var fullimage: String
     var source: String
+    var localImageURL: String?
 }

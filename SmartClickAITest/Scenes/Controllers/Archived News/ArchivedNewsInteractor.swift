@@ -6,7 +6,7 @@
 import UIKit
 
 protocol ArchivedNewsBusinessLogic {
-    
+    func fetchArchivedNews()
 }
 
 protocol ArchivedNewsDataStore {
@@ -19,4 +19,9 @@ class ArchivedNewsInteractor: ArchivedNewsBusinessLogic, ArchivedNewsDataStore
     var worker: ArchivedNewsWorker?
     //var name: String = ""
     
+    func fetchArchivedNews() {
+        var response = ArchivedNews.UseCase.Response()
+        response.news = APPInternalWorker().fetchArchivedNews()
+        presenter?.presentNews(response: response)
+    }
 }

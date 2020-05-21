@@ -71,6 +71,9 @@ class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic, Storyb
         interactor?.getNews()
         
     }
+    @IBAction func archiveButtonAction(_ sender: Any) {
+        router?.routeToArchivedNews()
+    }
     
     func displayNews(viewModel: ActiveNews.UseCase.ViewModel) {
         self.news = viewModel.news

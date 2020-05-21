@@ -105,6 +105,18 @@ struct APIClient {
     
     private let session = URLSession.shared
     
+    func downloadImage(_ url: URL, _ success: @escaping (_ location: URL, _ response: URLResponse?) -> Void, _ failure: @escaping ( ) -> Void) {
+        URLSession.shared.downloadTask(with: url) { location, response, error in
+            guard let location = location else {
+                print("download error:", error ?? "")
+                failure()
+                return
+            }
+            success(location, response)
+        }.resume()
+
+    }
+    
     func perform(_ request: APIRequest, _ completion: @escaping APIClientCompletion) {
         let baseURL = URL(string: request.baseUrl)!
         var urlComponents = URLComponents()

@@ -84,5 +84,9 @@ class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Stor
         let heightOfTextFirstText = sizeThatFitsTextView.height
         self.detailsTextViewHeight.constant = heightOfTextFirstText
     }
+    @IBAction func archiveButtonAction(_ sender: Any) {
+        guard let newsItem = news else {return}
+        interactor?.archiveNews(newsItem)
+    }
     
 }

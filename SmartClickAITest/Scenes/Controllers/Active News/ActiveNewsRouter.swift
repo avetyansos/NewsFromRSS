@@ -7,6 +7,7 @@ import UIKit
 
 protocol ActiveNewsRoutingLogic {
     func routToNewsDetails(news:News)
+    func routeToArchivedNews()
 }
 
 protocol ActiveNewsDataPassing {
@@ -22,6 +23,11 @@ class ActiveNewsRouter: NSObject, ActiveNewsRoutingLogic, ActiveNewsDataPassing
     func routToNewsDetails(news:News) {
         let destination = NewsDetailsViewController.instantiateFromStoryboard()
         destination.news = news
+        viewController?.show(destination, sender: self)
+    }
+    
+    func routeToArchivedNews() {
+        let destination = ArchivedNewsViewController.instantiateFromStoryboard()
         viewController?.show(destination, sender: self)
     }
 }

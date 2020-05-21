@@ -6,7 +6,7 @@
 import UIKit
 
 protocol ArchivedNewsDisplayLogic: class {
-
+    func displayNews(viewModel: ArchivedNews.UseCase.ViewModel)
 }
 
 class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, Storyboardable
@@ -18,6 +18,8 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     
     var interactor: ArchivedNewsBusinessLogic?
     var router: (NSObjectProtocol & ArchivedNewsRoutingLogic & ArchivedNewsDataPassing)?
+    @IBOutlet weak var archivedNewsTableView: UITableView!
+    private var news = [News]()
     
     // MARK: Object lifecycle
     
@@ -68,5 +70,33 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
         super.viewDidLoad()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchNews()
+    }
+    
+    func fetchNews() {
+        interactor?.fetchArchivedNews()
+    }
+    
+    func displayNews(viewModel: ArchivedNews.UseCase.ViewModel) {
+        self.news = viewModel.news
+        self.archivedNewsTableView.reloadData()
+    }
+    
+}
+
+extension ArchivedNewsViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return news.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "archivedNewsCellIdentifer", for: indexPath) as! ArchivedNewsTableViewCell
+        cell.news = news[indexPath.row]
+        return cell
+    }
+    
     
 }

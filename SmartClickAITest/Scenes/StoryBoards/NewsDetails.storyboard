@@ -19,16 +19,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRJ-iM-BVC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="892"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="922"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ViV-BT-S0U">
-                                                <rect key="frame" x="20" y="70" width="374" height="300"/>
+                                                <rect key="frame" x="20" y="100" width="374" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="gyM-rQ-tu8"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wah-58-x69">
-                                                <rect key="frame" x="20" y="390" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="420" width="374" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Cnz-WR-Jbk"/>
                                                 </constraints>
@@ -37,7 +37,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcT-cK-x87">
-                                                <rect key="frame" x="20" y="460" width="374" height="412"/>
+                                                <rect key="frame" x="20" y="490" width="374" height="412"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="412" id="C83-el-zTz"/>
@@ -46,18 +46,31 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCL-Mg-F8P">
+                                                <rect key="frame" x="344" y="40" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Osm-fQ-pB8"/>
+                                                    <constraint firstAttribute="width" constant="50" id="j6W-AE-KSF"/>
+                                                </constraints>
+                                                <state key="normal" image="archivebox.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="archiveButtonAction:" destination="jgg-EI-JtZ" eventType="touchUpInside" id="Rmd-rL-fbm"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="mcT-cK-x87" secondAttribute="bottom" constant="20" id="9tF-X9-8dr"/>
-                                            <constraint firstItem="ViV-BT-S0U" firstAttribute="top" secondItem="sRJ-iM-BVC" secondAttribute="top" constant="70" id="BGS-Kf-gcK"/>
+                                            <constraint firstItem="ViV-BT-S0U" firstAttribute="top" secondItem="oCL-Mg-F8P" secondAttribute="bottom" constant="10" id="FRy-1x-6D5"/>
                                             <constraint firstItem="mcT-cK-x87" firstAttribute="leading" secondItem="sRJ-iM-BVC" secondAttribute="leading" constant="20" id="HWY-bJ-fbd"/>
+                                            <constraint firstItem="oCL-Mg-F8P" firstAttribute="top" secondItem="sRJ-iM-BVC" secondAttribute="top" constant="40" id="JT4-I6-Q08"/>
                                             <constraint firstAttribute="trailing" secondItem="Wah-58-x69" secondAttribute="trailing" constant="20" id="Qqg-oj-dEs"/>
                                             <constraint firstAttribute="trailing" secondItem="ViV-BT-S0U" secondAttribute="trailing" constant="20" id="UgL-Gp-mxI"/>
                                             <constraint firstItem="Wah-58-x69" firstAttribute="leading" secondItem="sRJ-iM-BVC" secondAttribute="leading" constant="20" id="Z6R-yB-ReC"/>
                                             <constraint firstItem="mcT-cK-x87" firstAttribute="top" secondItem="Wah-58-x69" secondAttribute="bottom" constant="20" id="ZsI-iO-TWz"/>
                                             <constraint firstItem="ViV-BT-S0U" firstAttribute="leading" secondItem="sRJ-iM-BVC" secondAttribute="leading" constant="20" id="eh1-Ah-7rc"/>
                                             <constraint firstAttribute="trailing" secondItem="mcT-cK-x87" secondAttribute="trailing" constant="20" id="m6b-Ea-VJ3"/>
+                                            <constraint firstAttribute="trailing" secondItem="oCL-Mg-F8P" secondAttribute="trailing" constant="20" id="t2w-1x-2ju"/>
                                             <constraint firstItem="Wah-58-x69" firstAttribute="top" secondItem="ViV-BT-S0U" secondAttribute="bottom" constant="20" id="wDR-zf-w02"/>
                                         </constraints>
                                     </view>
@@ -93,4 +106,7 @@
             <point key="canvasLocation" x="8.6956521739130448" y="135.9375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="archivebox.fill" catalog="system" width="128" height="106"/>
+    </resources>
 </document>
