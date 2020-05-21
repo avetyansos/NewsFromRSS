@@ -95,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="QQg-JV-1fj"/>
                     </view>
                     <connections>
+                        <outlet property="archiveButton" destination="oCL-Mg-F8P" id="AuU-dJ-UdP"/>
                         <outlet property="detailsTextViewHeight" destination="C83-el-zTz" id="K3A-Rq-wX2"/>
                         <outlet property="newsDetailsTextView" destination="mcT-cK-x87" id="UiT-2T-8Qo"/>
                         <outlet property="newsImageView" destination="ViV-BT-S0U" id="TsC-zy-46w"/>

@@ -6,7 +6,8 @@
 import UIKit
 
 protocol NewsDetailsDisplayLogic: class {
-
+    func displayPupUp(viewModel: NewsDetails.UseCase.ViewModel)
+    func displaySuccessPopUp(viewModel: NewsDetails.UseCase.ViewModel)
 }
 
 class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Storyboardable
@@ -23,6 +24,8 @@ class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Stor
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var detailsTextViewHeight: NSLayoutConstraint!
     var news:News?
+    var isArchive = false
+    @IBOutlet weak var archiveButton: UIButton!
     
     // MARK: Object lifecycle
     
@@ -77,7 +80,14 @@ class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Stor
     
     private func setupView() {
         guard let viewDetails = news else {return}
-        self.newsImageView.downloaded(from: viewDetails.fullimage)
+        if isArchive {
+            guard let path = news?.localImageURL else {return}
+            self.newsImageView.image = path.makeUIImage()
+            archiveButton.isHidden = true
+        } else {
+            self.newsImageView.downloaded(from: viewDetails.fullimage)
+        }
+        
         self.newsTitleLabel.text = viewDetails.title
         self.newsDetailsTextView.text = viewDetails.description
         let sizeThatFitsTextView = newsDetailsTextView.sizeThatFits(CGSize(width: CGFloat(217), height: CGFloat(MAXFLOAT)))
@@ -87,6 +97,14 @@ class NewsDetailsViewController: UIViewController, NewsDetailsDisplayLogic, Stor
     @IBAction func archiveButtonAction(_ sender: Any) {
         guard let newsItem = news else {return}
         interactor?.archiveNews(newsItem)
+    }
+    
+    func displayPupUp(viewModel: NewsDetails.UseCase.ViewModel) {
+        self.showErrorAlert(title: "Warning", textString: viewModel.popupMessage)
+    }
+    
+    func displaySuccessPopUp(viewModel: NewsDetails.UseCase.ViewModel) {
+        self.showSuccessAlert(textString: viewModel.popupMessage)
     }
     
 }

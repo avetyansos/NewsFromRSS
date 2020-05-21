@@ -12,6 +12,7 @@ enum ArchivedNews
     {
         struct Request
         {
+            var news:News!
         }
         struct Response
         {

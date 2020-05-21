@@ -15,9 +15,11 @@ enum NewsDetails
         }
         struct Response
         {
+            var popupMessage = ""
         }
         struct ViewModel
         {
+            var popupMessage = ""
         }
     }
 }

@@ -19,16 +19,9 @@ class ArchivedNewsTableViewCell: UITableViewCell {
         didSet {
             self.titleLabel.text = news?.title
             guard let path = news?.localImageURL else {return}
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
-            {
-               let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(path)
-                self.sizeLabel.text = "\((Double(imageURL.fileSize) / 1000.00).rounded()) KB"
-               let image    = UIImage(contentsOfFile: imageURL.path)
-                self.newsImageView.image = image
-            }
+            self.newsImageView.image = path.makeUIImage()
+            guard let imageURL = path.imageURL() else {self.sizeLabel.text = "0 KB"; return }
+            self.sizeLabel.text = "\((Double(imageURL.fileSize) / 1000.00).rounded()) KB"
         }
     }
     

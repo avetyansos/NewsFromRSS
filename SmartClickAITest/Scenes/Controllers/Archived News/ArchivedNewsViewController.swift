@@ -68,12 +68,16 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         fetchNews()
+    }
+    
+    private func setupView() {
+        self.archivedNewsTableView.tableFooterView = UIView(frame: .zero)
     }
     
     func fetchNews() {
@@ -97,6 +101,18 @@ extension ArchivedNewsViewController : UITableViewDataSource {
         cell.news = news[indexPath.row]
         return cell
     }
-    
-    
+}
+
+extension ArchivedNewsViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routToNewsDetails(news[indexPath.row])
+    }
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var request = ArchivedNews.UseCase.Request()
+            request.news = news[indexPath.row]
+            interactor?.removeNews(request: request)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

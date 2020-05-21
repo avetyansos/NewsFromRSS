@@ -69,10 +69,15 @@ class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic, Storyb
     {
         super.viewDidLoad()
         interactor?.getNews()
+        setupView()
         
     }
     @IBAction func archiveButtonAction(_ sender: Any) {
         router?.routeToArchivedNews()
+    }
+    
+    private func setupView () {
+        self.newTableView.tableFooterView = UIView(frame: .zero)
     }
     
     func displayNews(viewModel: ActiveNews.UseCase.ViewModel) {

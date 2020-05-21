@@ -105,11 +105,11 @@ struct APIClient {
     
     private let session = URLSession.shared
     
-    func downloadImage(_ url: URL, _ success: @escaping (_ location: URL, _ response: URLResponse?) -> Void, _ failure: @escaping ( ) -> Void) {
+    func downloadImage(_ url: URL, _ success: @escaping (_ location: URL, _ response: URLResponse?) -> Void, _ failure: @escaping ( _ error: Error) -> Void) {
         URLSession.shared.downloadTask(with: url) { location, response, error in
             guard let location = location else {
                 print("download error:", error ?? "")
-                failure()
+                failure(error!)
                 return
             }
             success(location, response)
