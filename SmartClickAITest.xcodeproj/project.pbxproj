@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		672D05BC2476866B00D90021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05BB2476866B00D90021 /* AppDelegate.swift */; };
 		672D05BE2476866B00D90021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05BD2476866B00D90021 /* SceneDelegate.swift */; };
-		672D05C32476866B00D90021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C12476866B00D90021 /* Main.storyboard */; };
+		672D05C32476866B00D90021 /* ActiveNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C12476866B00D90021 /* ActiveNews.storyboard */; };
 		672D05C62476866B00D90021 /* SmartClickAITest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 672D05C42476866B00D90021 /* SmartClickAITest.xcdatamodeld */; };
 		672D05C82476866C00D90021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C72476866C00D90021 /* Assets.xcassets */; };
 		672D05CB2476866C00D90021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 672D05C92476866C00D90021 /* LaunchScreen.storyboard */; };
@@ -26,13 +26,19 @@
 		672D05EF24768ACA00D90021 /* ArchivedNewsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05E924768ACA00D90021 /* ArchivedNewsModels.swift */; };
 		672D05F024768ACA00D90021 /* ArchivedNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05EA24768ACA00D90021 /* ArchivedNewsViewController.swift */; };
 		672D05F124768ACA00D90021 /* ArchivedNewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672D05EB24768ACA00D90021 /* ArchivedNewsInteractor.swift */; };
+		67650C2424768C8500AFA360 /* ArchivedNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67650C2324768C8500AFA360 /* ArchivedNews.storyboard */; };
+		67650C282476B10800AFA360 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67650C272476B10700AFA360 /* AppConstants.swift */; };
+		67650C2B2476B66200AFA360 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67650C2A2476B66200AFA360 /* News.swift */; };
+		67650C2E2476C77600AFA360 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67650C2D2476C77600AFA360 /* NewsTableViewCell.swift */; };
+		67650C312476C94B00AFA360 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67650C302476C94B00AFA360 /* UIImageViewExtension.swift */; };
+		F746FE05EE7D7CB66DB0BB24 /* Pods_SmartClickAITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894F6E674D4C261C65D38806 /* Pods_SmartClickAITest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		672D05B82476866B00D90021 /* SmartClickAITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartClickAITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		672D05BB2476866B00D90021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		672D05BD2476866B00D90021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		672D05C22476866B00D90021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		672D05C22476866B00D90021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ActiveNews.storyboard; sourceTree = "<group>"; };
 		672D05C52476866B00D90021 /* SmartClickAITest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartClickAITest.xcdatamodel; sourceTree = "<group>"; };
 		672D05C72476866C00D90021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		672D05CA2476866C00D90021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +56,14 @@
 		672D05E924768ACA00D90021 /* ArchivedNewsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedNewsModels.swift; sourceTree = "<group>"; };
 		672D05EA24768ACA00D90021 /* ArchivedNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedNewsViewController.swift; sourceTree = "<group>"; };
 		672D05EB24768ACA00D90021 /* ArchivedNewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedNewsInteractor.swift; sourceTree = "<group>"; };
+		67650C2324768C8500AFA360 /* ArchivedNews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArchivedNews.storyboard; sourceTree = "<group>"; };
+		67650C272476B10700AFA360 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		67650C2A2476B66200AFA360 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		67650C2D2476C77600AFA360 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		67650C302476C94B00AFA360 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		681CC48D74E50BA607A7FA97 /* Pods-SmartClickAITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartClickAITest.debug.xcconfig"; path = "Target Support Files/Pods-SmartClickAITest/Pods-SmartClickAITest.debug.xcconfig"; sourceTree = "<group>"; };
+		894F6E674D4C261C65D38806 /* Pods_SmartClickAITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartClickAITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9192C27F666EEFCE67488B30 /* Pods-SmartClickAITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartClickAITest.release.xcconfig"; path = "Target Support Files/Pods-SmartClickAITest/Pods-SmartClickAITest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F746FE05EE7D7CB66DB0BB24 /* Pods_SmartClickAITest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61C8930A19EDBFBBDA28B1B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				894F6E674D4C261C65D38806 /* Pods_SmartClickAITest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		672D05AF2476866B00D90021 = {
 			isa = PBXGroup;
 			children = (
 				672D05BA2476866B00D90021 /* SmartClickAITest */,
 				672D05B92476866B00D90021 /* Products */,
+				A521436F4A86BA2A8FADBE4E /* Pods */,
+				61C8930A19EDBFBBDA28B1B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +107,7 @@
 		672D05BA2476866B00D90021 /* SmartClickAITest */ = {
 			isa = PBXGroup;
 			children = (
+				67650C252476B0ED00AFA360 /* Helpers */,
 				672D05D524768A3B00D90021 /* Scenes */,
 				672D05D2247686B900D90021 /* Network Request Worker */,
 				672D05BB2476866B00D90021 /* AppDelegate.swift */,
@@ -114,7 +140,8 @@
 		672D05D624768A5400D90021 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				672D05C12476866B00D90021 /* Main.storyboard */,
+				672D05C12476866B00D90021 /* ActiveNews.storyboard */,
+				67650C2324768C8500AFA360 /* ArchivedNews.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -154,6 +181,58 @@
 			path = "Archived News";
 			sourceTree = "<group>";
 		};
+		67650C252476B0ED00AFA360 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				67650C2F2476C93A00AFA360 /* Extensions */,
+				67650C2C2476C76200AFA360 /* Cells */,
+				67650C292476B65500AFA360 /* Models */,
+				67650C262476B0F300AFA360 /* App Constants */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		67650C262476B0F300AFA360 /* App Constants */ = {
+			isa = PBXGroup;
+			children = (
+				67650C272476B10700AFA360 /* AppConstants.swift */,
+			);
+			path = "App Constants";
+			sourceTree = "<group>";
+		};
+		67650C292476B65500AFA360 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67650C2A2476B66200AFA360 /* News.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		67650C2C2476C76200AFA360 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				67650C2D2476C77600AFA360 /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		67650C2F2476C93A00AFA360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67650C302476C94B00AFA360 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A521436F4A86BA2A8FADBE4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				681CC48D74E50BA607A7FA97 /* Pods-SmartClickAITest.debug.xcconfig */,
+				9192C27F666EEFCE67488B30 /* Pods-SmartClickAITest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 672D05CF2476866C00D90021 /* Build configuration list for PBXNativeTarget "SmartClickAITest" */;
 			buildPhases = (
+				892EDE9E68CE29162FDA7AA4 /* [CP] Check Pods Manifest.lock */,
 				672D05B42476866B00D90021 /* Sources */,
 				672D05B52476866B00D90021 /* Frameworks */,
 				672D05B62476866B00D90021 /* Resources */,
@@ -213,12 +293,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				672D05CB2476866C00D90021 /* LaunchScreen.storyboard in Resources */,
+				67650C2424768C8500AFA360 /* ArchivedNews.storyboard in Resources */,
 				672D05C82476866C00D90021 /* Assets.xcassets in Resources */,
-				672D05C32476866B00D90021 /* Main.storyboard in Resources */,
+				672D05C32476866B00D90021 /* ActiveNews.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		892EDE9E68CE29162FDA7AA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartClickAITest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		672D05B42476866B00D90021 /* Sources */ = {
@@ -226,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				672D05C62476866B00D90021 /* SmartClickAITest.xcdatamodeld in Sources */,
+				67650C282476B10800AFA360 /* AppConstants.swift in Sources */,
 				672D05EE24768ACA00D90021 /* ArchivedNewsRouter.swift in Sources */,
 				672D05EF24768ACA00D90021 /* ArchivedNewsModels.swift in Sources */,
 				672D05BC2476866B00D90021 /* AppDelegate.swift in Sources */,
@@ -234,25 +341,28 @@
 				672D05E424768AA700D90021 /* ActiveNewsInteractor.swift in Sources */,
 				672D05ED24768ACA00D90021 /* ArchivedNewsWorker.swift in Sources */,
 				672D05E024768AA700D90021 /* ActiveNewsWorker.swift in Sources */,
+				67650C312476C94B00AFA360 /* UIImageViewExtension.swift in Sources */,
 				672D05EC24768ACA00D90021 /* ArchivedNewsPresenter.swift in Sources */,
 				672D05D4247686D700D90021 /* NetworkRequestWorker.swift in Sources */,
+				67650C2B2476B66200AFA360 /* News.swift in Sources */,
 				672D05BE2476866B00D90021 /* SceneDelegate.swift in Sources */,
 				672D05E124768AA700D90021 /* ActiveNewsRouter.swift in Sources */,
 				672D05E224768AA700D90021 /* ActiveNewsModels.swift in Sources */,
 				672D05DF24768AA700D90021 /* ActiveNewsPresenter.swift in Sources */,
 				672D05F024768ACA00D90021 /* ArchivedNewsViewController.swift in Sources */,
+				67650C2E2476C77600AFA360 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		672D05C12476866B00D90021 /* Main.storyboard */ = {
+		672D05C12476866B00D90021 /* ActiveNews.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				672D05C22476866B00D90021 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ActiveNews.storyboard;
 			sourceTree = "<group>";
 		};
 		672D05C92476866C00D90021 /* LaunchScreen.storyboard */ = {
@@ -382,9 +492,11 @@
 		};
 		672D05D02476866C00D90021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 681CC48D74E50BA607A7FA97 /* Pods-SmartClickAITest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
 				INFOPLIST_FILE = SmartClickAITest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,9 +511,11 @@
 		};
 		672D05D12476866C00D90021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9192C27F666EEFCE67488B30 /* Pods-SmartClickAITest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
 				INFOPLIST_FILE = SmartClickAITest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

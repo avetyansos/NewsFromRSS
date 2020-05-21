@@ -6,13 +6,15 @@
 import UIKit
 
 protocol ActiveNewsDisplayLogic: class {
-
+    func displayNews(viewModel: ActiveNews.UseCase.ViewModel)
 }
 
 class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic
 {
     var interactor: ActiveNewsBusinessLogic?
     var router: (NSObjectProtocol & ActiveNewsRoutingLogic & ActiveNewsDataPassing)?
+    @IBOutlet weak var newTableView: UITableView!
+    private var news  = [News]()
     
     // MARK: Object lifecycle
     
@@ -61,7 +63,29 @@ class ActiveNewsViewController: UIViewController, ActiveNewsDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        interactor?.getNews()
         
     }
+    
+    func displayNews(viewModel: ActiveNews.UseCase.ViewModel) {
+        self.news = viewModel.news
+        DispatchQueue.main.async {
+            self.newTableView.reloadData()
+        }
+    }
+    
+}
+
+extension ActiveNewsViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.news.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCellIdentifer", for: indexPath) as! NewsTableViewCell
+        cell.news = news[indexPath.row]
+        return cell
+    }
+    
     
 }

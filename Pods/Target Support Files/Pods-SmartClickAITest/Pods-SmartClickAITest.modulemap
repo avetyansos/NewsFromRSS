@@ -1,0 +1,6 @@
+framework module Pods_SmartClickAITest {
+  umbrella header "Pods-SmartClickAITest-umbrella.h"
+
+  export *
+  module * { export * }
+}

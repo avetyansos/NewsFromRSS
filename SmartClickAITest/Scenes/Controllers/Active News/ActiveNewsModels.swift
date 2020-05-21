@@ -15,9 +15,11 @@ enum ActiveNews
         }
         struct Response
         {
+            var news = [News]()
         }
         struct ViewModel
         {
+            var news = [News]()
         }
     }
 }
