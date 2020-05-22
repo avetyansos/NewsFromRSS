@@ -22,6 +22,14 @@ class NewsTableViewCell: UITableViewCell {
         }
     }
     
+    func highLightBackground() {
+        self.backgroundView?.backgroundColor = UIColor.lightGray
+    }
+    
+    func removeHighlight() {
+        self.backgroundView?.backgroundColor = UIColor.white
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

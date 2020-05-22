@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import BackgroundTasks
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +18,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerLocalNotiffs()
+        registerBackgroudnTask()
         return true
+    }
+    
+    func registerBackgroudnTask() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.as.fetchNews",
+                                        using: nil) { (task) in
+          self.handleAppRefreshTask(task: task as! BGAppRefreshTask)
+        }
+    }
+    
+    func handleAppRefreshTask(task: BGAppRefreshTask) {
+        task.expirationHandler = {
+          task.setTaskCompleted(success: false)
+            APIClient().session.invalidateAndCancel()
+        }
+        ActiveNewsWorker().getNewsFormRSSFeed({ (news) in
+            if NewsToBackgroudWorker.shareed.fetchedNews.count < news.count {
+                self.sendLocalNotification(news.first?.description ?? "")
+                let count = news.count - NewsToBackgroudWorker.shareed.fetchedNews.count
+                NotificationCenter.default.post(name: .newNews, object: self, userInfo: ["count":count])
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        schedulNewsFetch()
+    }
+    
+    func registerLocalNotiffs() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        notificationCenter.requestAuthorization(options: options) {
+            (didAllow, error) in
+            if !didAllow {
+                print("User has declined notifications")
+            }
+        }
+    }
+    
+    func sendLocalNotification(_ body: String) {
+        let content = UNMutableNotificationContent()
+        let notificationCenter = UNUserNotificationCenter.current()
+        content.title = "Breaking news"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let identifier = "Local Notification"
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
+        notificationCenter.add(request, withCompletionHandler: nil)
+    }
+    
+    func schedulNewsFetch() {
+        let newsFetchTask = BGAppRefreshTaskRequest(identifier: "com.as.fetchNews")
+        newsFetchTask.earliestBeginDate = Date(timeIntervalSinceNow: 30)
+        do {
+          try BGTaskScheduler.shared.submit(newsFetchTask)
+        } catch {
+          print("Unable to submit task: \(error.localizedDescription)")
+        }
     }
 
     // MARK: UISceneSession Lifecycle

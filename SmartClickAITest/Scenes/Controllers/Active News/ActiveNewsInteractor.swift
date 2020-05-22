@@ -26,6 +26,7 @@ class ActiveNewsInteractor: ActiveNewsBusinessLogic, ActiveNewsDataStore
             respose.news = news
             self.presenter?.presentNews(response: respose)
         }, { (error) in
+            self.presenter?.presetnSomethingWentWrongPopUp()
             print(error.localizedDescription)
         })
     }

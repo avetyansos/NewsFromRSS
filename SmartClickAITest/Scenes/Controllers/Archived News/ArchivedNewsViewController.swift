@@ -20,6 +20,7 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     var router: (NSObjectProtocol & ArchivedNewsRoutingLogic & ArchivedNewsDataPassing)?
     @IBOutlet weak var archivedNewsTableView: UITableView!
     private var news = [News]()
+    @IBOutlet weak var noArchivedNewsLabel: UILabel!
     
     // MARK: Object lifecycle
     
@@ -78,6 +79,8 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     
     private func setupView() {
         self.archivedNewsTableView.tableFooterView = UIView(frame: .zero)
+        self.noArchivedNewsLabel.isHidden = true
+        self.noArchivedNewsLabel.text = "You don't have any archived news"
     }
     
     func fetchNews() {
@@ -86,7 +89,16 @@ class ArchivedNewsViewController: UIViewController, ArchivedNewsDisplayLogic, St
     
     func displayNews(viewModel: ArchivedNews.UseCase.ViewModel) {
         self.news = viewModel.news
-        self.archivedNewsTableView.reloadData()
+        if self.news.count > 0 {
+            self.archivedNewsTableView.isHidden = false
+            self.noArchivedNewsLabel.isHidden = true
+            self.archivedNewsTableView.reloadData()
+        } else {
+            UIView.animate(withDuration: 0.2) {
+                self.archivedNewsTableView.isHidden = true
+                self.noArchivedNewsLabel.isHidden = false
+            }
+        }
     }
     
 }

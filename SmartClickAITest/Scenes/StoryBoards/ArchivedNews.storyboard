@@ -70,18 +70,29 @@
                                     <outlet property="delegate" destination="cA7-T4-bnY" id="iwv-MJ-fG1"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-QP-SWI">
+                                <rect key="frame" x="10" y="435.5" width="394" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NWP-Ae-R0a" firstAttribute="trailing" secondItem="Fes-oh-jzz" secondAttribute="trailing" id="7vK-Ku-LxL"/>
+                            <constraint firstItem="zeK-QP-SWI" firstAttribute="centerX" secondItem="ocg-LN-3Ed" secondAttribute="centerX" id="OUx-f2-czN"/>
+                            <constraint firstItem="zeK-QP-SWI" firstAttribute="centerY" secondItem="ocg-LN-3Ed" secondAttribute="centerY" id="Ppe-QQ-t92"/>
                             <constraint firstItem="Fes-oh-jzz" firstAttribute="top" secondItem="NWP-Ae-R0a" secondAttribute="top" id="WWJ-fL-UO0"/>
+                            <constraint firstItem="zeK-QP-SWI" firstAttribute="leading" secondItem="NWP-Ae-R0a" secondAttribute="leading" constant="10" id="bco-65-s1E"/>
                             <constraint firstItem="NWP-Ae-R0a" firstAttribute="bottom" secondItem="Fes-oh-jzz" secondAttribute="bottom" id="cM9-Ne-qpC"/>
+                            <constraint firstItem="NWP-Ae-R0a" firstAttribute="trailing" secondItem="zeK-QP-SWI" secondAttribute="trailing" constant="10" id="tx8-xC-BLN"/>
                             <constraint firstItem="Fes-oh-jzz" firstAttribute="leading" secondItem="NWP-Ae-R0a" secondAttribute="leading" id="w7o-l1-ipT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NWP-Ae-R0a"/>
                     </view>
                     <connections>
                         <outlet property="archivedNewsTableView" destination="Fes-oh-jzz" id="DvF-vo-kko"/>
+                        <outlet property="noArchivedNewsLabel" destination="zeK-QP-SWI" id="RLr-iH-rQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sru-KK-rh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

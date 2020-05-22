@@ -23,4 +23,15 @@ extension UIViewController {
         }))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func askQuestionAlert(title: String?, textString: String, _ success: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title ?? "", message: textString, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "YES", style: .default, handler: { _ in
+            
+            success()
+        }))
+        alertController.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: { _ in
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

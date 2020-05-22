@@ -7,7 +7,7 @@ import UIKit
 
 protocol ActiveNewsPresentationLogic {
     func presentNews(response: ActiveNews.UseCase.Response)
-    
+    func presetnSomethingWentWrongPopUp()
 }
 
 class ActiveNewsPresenter: ActiveNewsPresentationLogic
@@ -20,4 +20,7 @@ class ActiveNewsPresenter: ActiveNewsPresentationLogic
         viewController?.displayNews(viewModel: viewModel)
     }
     
+    func presetnSomethingWentWrongPopUp() {
+        viewController?.displaySomethingWhenWrongPopUp()
+    }
 }

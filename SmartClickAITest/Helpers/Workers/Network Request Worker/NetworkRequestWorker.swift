@@ -103,7 +103,7 @@ struct APIClient {
     
     typealias APIClientCompletion = (APIResult<Data?>) -> Void
     
-    private let session = URLSession.shared
+    let session = URLSession.shared
     
     func downloadImage(_ url: URL, _ success: @escaping (_ location: URL, _ response: URLResponse?) -> Void, _ failure: @escaping ( _ error: Error) -> Void) {
         URLSession.shared.downloadTask(with: url) { location, response, error in
